@@ -4,9 +4,93 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DicasWindows"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Icon="{x:Null}"
+        MinWidth="450" MinHeight="600"
+        Title="Dicas" Height="772.8" Width="1081" WindowStyle="ThreeDBorderWindow">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+        </Style>
+        <Style x:Key="Card" TargetType="{x:Type StackPanel}">
+            <Setter Property="Background" Value="Blue"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect BlurRadius="3" Opacity="0.1" ShadowDepth="1"/>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect BlurRadius="4" Opacity="0.3" ShadowDepth="1"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
     <Grid>
-        
+        <Canvas Panel.ZIndex="50" Background="#55ffffff" Height="32" Width="32" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,4,21,0">
+            <materialDesign:PackIcon Kind="Gear" Foreground="white" Height="20" Width="20" Margin="6"/>
+        </Canvas>
+        <Canvas Panel.ZIndex="50" Background="#55ffffff" Height="32" Width="32" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,4,55,0">
+            <materialDesign:PackIcon Kind="Search" Foreground="white" Height="20" Width="20" Margin="6"/>
+        </Canvas>
+        <ScrollViewer >
+            <Grid>
+                <Image Margin="0" Height="350" VerticalAlignment="Top"  Stretch="UniformToFill"  Source="C:/Users/vinicius/source/repos/DicasWindows/DicasWindows/bin/Debug/img/wallpaper.jpg" />
+                <StackPanel Margin="15">
+                    <TextBlock HorizontalAlignment="Center" FontWeight="Bold" Foreground="White" FontSize="25" Margin="0,90,0,15">Bem-vindo às Dicas da Microsoft!</TextBlock>
+                    <Button Content="Explore as novidades" Foreground="White" Background="SlateBlue" HorizontalAlignment="Center" />
+                    <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10,70,10,0">
+                        <StackPanel Style="{StaticResource Card}" Background="#ffdddddd" Height="300" Width="230" HorizontalAlignment="Center" Margin="10">
+                            <materialDesign:PackIcon Kind="HeartOutline" Foreground="DodgerBlue" Height="80" Width="80" Margin="0,30" HorizontalAlignment="Center"/>
+                            <Grid Background="White" Height="160">
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Bold" >Novidades</TextBlock>
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="15" Foreground="DodgerBlue">6 dicas</TextBlock>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Style="{StaticResource Card}" Background="#ffdddddd" Height="300" Width="230" HorizontalAlignment="Center" Margin="10">
+                            <materialDesign:PackIcon Kind="Paintbrush" Foreground="DodgerBlue" Height="80" Width="80" Margin="0,30" HorizontalAlignment="Center"/>
+                            <Grid Background="White" Height="160">
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Bold" TextAlignment="Center">Personalize seu <LineBreak/> computador</TextBlock>
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="15" Foreground="DodgerBlue">13 dicas</TextBlock>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Style="{StaticResource Card}" Background="#ffdddddd" Height="300" Width="230" HorizontalAlignment="Center" Margin="10">
+                            <materialDesign:PackIcon Kind="ImageOutline" Foreground="DodgerBlue" Height="80" Width="80" Margin="0,30" HorizontalAlignment="Center"/>
+                            <Grid Background="White" Height="160">
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Bold" TextAlignment="Center"    >Noções Basicas <LineBreak/> Sobre Fotos</TextBlock>
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="15" Foreground="DodgerBlue">12 dicas</TextBlock>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Style="{StaticResource Card}" Background="#ffdddddd" Height="300" Width="230" HorizontalAlignment="Center" Margin="10">
+                            <materialDesign:PackIcon Kind="StarOutline" Foreground="DodgerBlue" Height="80" Width="80" Margin="0,30" HorizontalAlignment="Center"/>
+                            <Grid Background="White" Height="160">
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Bold" TextAlignment="Center" >Melhores truques do <LineBreak/></TextBlock>
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="15" Foreground="DodgerBlue">10 dicas</TextBlock>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Style="{StaticResource Card}" Background="#ffdddddd" Height="300" Width="230" HorizontalAlignment="Center" Margin="10">
+                            <materialDesign:PackIcon Kind="Magnify" Foreground="DodgerBlue" Height="80" Width="80" Margin="0,30" HorizontalAlignment="Center"/>
+                            <Grid Background="White" Height="160">
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Bold" TextAlignment="Center" >Encontre rápido</TextBlock>
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="15" Foreground="DodgerBlue">4 dicas</TextBlock>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Style="{StaticResource Card}" Background="#ffdddddd" Height="300" Width="230" HorizontalAlignment="Center" Margin="10">
+                            <materialDesign:PackIcon Kind="ClipboardOutline" Foreground="DodgerBlue" Height="80" Width="80" Margin="0,30" HorizontalAlignment="Center"/>
+                            <Grid Background="White" Height="160">
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" FontWeight="Bold" TextAlignment="Center" >Organizar</TextBlock>
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="15" Foreground="DodgerBlue">11 dicas</TextBlock>
+                            </Grid>
+                        </StackPanel>
+                    </WrapPanel>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Window>
